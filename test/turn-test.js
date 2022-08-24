@@ -1,16 +1,22 @@
 const chai = require('chai');
+const Card = require('../src/Card');
 const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 let turn
 let turn2
+let card
+let card2
 
 describe('Turn', () => {
 
     beforeEach(() => {
-        turn = new Turn();
-        turn2 = new Turn();
+        turn = new Turn("object", card);
+        turn2 = new Turn("object", card2);
+        card = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object");
+        card2 = new Card(2,"What is a comma-separated list of related values?", ["array", "object", "function"], "array")
     })
+
     it('should be a function', () => {
         expect(Turn).to.be.a('function');
     })
@@ -21,35 +27,23 @@ describe('Turn', () => {
     })
 
     it('should return the player\'s guess', () => {
-        //expect(turn.userGuess).to.equal(      )
-        //expect(turn2.userGuess).to.equal(      )
+        expect(turn.returnGuess()).to.equal('object')
+        expect(turn2.returnGuess()).to.equal('object')
     })
 
     it('should return a card object', () => {
-        //expect(turn.cardObject).to.equal(     )
-        //expect(turn2.cardObject).to.equal(     )
+        expect(turn.returnCard()).to.deep.equal(card)
+        expect(turn2.returnCard()).to.deep.equal(card2)
     })
 
     it('should indicate if the user\'s answer is correct', () => {
-        //turn.evauluateGuess()
-        //expect(turn.userGuess).to.equal(true)
-
-        //turn2.evaluateGuess()
-        //expect(turn2.userGuess).to.equal(false)
+        expect(turn.evaluateGuess()).to.equal(true)
+        expect(turn2.evaluateGuess()).to.equal(false)
     })
 
     it('should give feedback on user\'s guess', () => {
-        //turn.giveUserFeedback()
-        //expect(turn.feedback).to.equal('correct!')
-
-        //turn2.giveUserFeedback()
-        //expect(turn2.feedback).to.equal('incorrect!')
+        expect(turn.giveUserFeedback()).to.equal('correct!')
+        expect(turn2.giveUserFeedback()).to.equal('incorrect!')
     })
 
 })
-
-// Instantiated with two arguments - a string (that represents a user’s guess to the question), and a Card object for the current card in play.
-// returnGuess: method that returns the guess
-// returnCard: method that returns the Card
-// evaluateGuess: method that returns a boolean indicating if the user’s guess matches the correct answer on the card
-// giveFeedback - method that returns either ‘incorrect!’ or ‘correct!’ based on whether the guess is correct or not.
