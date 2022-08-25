@@ -1,9 +1,8 @@
 const chai = require('chai');
-const Turn = require('../src/turn');
+const expect = chai.expect;
+const { prototypeData } = require('../src/data');
 const Deck = require('../src/deck');
 const Round = require('../src/round');
-const { prototypeData } = require('../src/data');
-const expect = chai.expect;
 
 let deck
 let round
@@ -62,7 +61,7 @@ describe('Round', () => {
 
     it('should end the game with a message stating the percentage of correct answers', () => {
         round.takeTurn('object');
-        
+
         expect(round.endRound()).to.equal('** Round over! ** You answered 100% of the questions correctly!')
     })
 
