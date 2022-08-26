@@ -6,9 +6,10 @@
 2. Technologies Used
 3. Functions
 4. Set Up
-5. Contributors
-6. Project Spec & Ruberic
-7. Published Link
+5. Illustrations
+6. Contributors
+7. Project Spec & Ruberic
+8. Published Link
 
 ## Introduction
 
@@ -33,6 +34,11 @@
   2. Clone the repo to your local machine.
   3. In your terminal, navigate to your project repo.
   4. Run the command `node index.js`.
+
+## Illustrations
+![Flashcards](https://user-images.githubusercontent.com/99286590/186798676-4779b907-9b05-43b7-96e8-799c022720fd.png)
+
+![Flashcards](https://user-images.githubusercontent.com/99286590/186798720-ea7225dd-4f0d-4486-8295-37aee461cfba.png)
 
 ## Contributors
 
