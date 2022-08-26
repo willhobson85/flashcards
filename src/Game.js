@@ -20,7 +20,8 @@ class Game {
   }
 
   start() {
-    let newCards = prototypeQuestions.map(card => new Card(card.id,card.question, card.answers, card.correct));
+    let newCards = prototypeQuestions.map(card => { 
+      return new Card(card.id, card.question, card.answers, card.correctAnswer)});
     let deck = new Deck(newCards);
     let round = new Round(deck)
 

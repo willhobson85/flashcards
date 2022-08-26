@@ -23,9 +23,4 @@ describe('Game', () => {
     it('should be an instance of Game', () => {
         expect(game).to.be.an.instanceOf(Game);
     })
-
-    it('should start on turn 1', () => {
-        game.start();
-        expect(game.currentRound).to.equal(1);
-    })
 })
